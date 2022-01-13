@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeEvent index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">TypeEvent index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Evenement</th>
+                <th>Atelier</th>
+                <th>Sortie</th>
+                <th>Sejour</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_event in type_events %}
+            <tr>
+                <td>{{ type_event.id }}</td>
+                <td>{{ type_event.evenement }}</td>
+                <td>{{ type_event.atelier }}</td>
+                <td>{{ type_event.sortie }}</td>
+                <td>{{ type_event.sejour }}</td>
+
+                <td>
+                    <a href="{{ path('type_event_show', {'id': type_event.id}) }}" class="pac">Voir</a>
+                    <a href="{{ path('type_event_edit', {'id': type_event.id}) }}" class="pac">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_event_new') }}">Nouveau type</a>
+    </div>
+{% endblock %}

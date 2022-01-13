@@ -1,0 +1,295 @@
+.headi {
+    height:5px;
+  }
+  
+  i {
+    height: 10px !important;
+    width: 10px !important;
+  }
+  
+  header {
+    font-size: 20px;
+  }
+  
+  /* ???????????????????????????????????????????  HOVER   ?????????????????????????????????????????? */
+  
+  .nuit:hover{
+    background-color:#a6e1faff;
+    color: whitesmoke!important;
+  }
+  
+  .port:hover{
+    background-color: #001c55ff;
+    color: whitesmoke!important;
+  }
+  
+  .badi:hover {
+    background-color: #00072dff;
+    color: whitesmoke!important;
+  }
+  
+  h1 {
+    background: -webkit-linear-gradient(#a6e1faff, #0a2472ff,#00072dff ) !important;
+    background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent!important; 
+    line-height: 2;
+    margin: 10px 0;
+    font-family: 'Pacifico', cursive;
+  }
+  
+  /* BORDURES */
+  .borde {
+    border-radius: 10% 30% 0% 70% !important; 
+    border: 1px;
+  }
+  
+  .bord {
+    border: 2px solid;
+    border-radius: 60px;
+    color:#a6e1faff;
+  }
+  
+  .bordi {
+    border-radius: 60px;
+  }
+  
+  h3, h4 , h2 {
+    font-family: 'Pacifico', cursive;
+  } 
+    
+  h2{
+    background: radial-gradient(#00072dff, #001c55ff, #0a2472ff, #0e6ba8ff, #a6e1faff);
+    background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent!important; 
+  line-height: 1.8 !important; 
+  }
+  
+  h3{
+      background: #001c55ff !important;
+      background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent!important; 
+    line-height: 2; 
+    }
+  
+  h4 {
+      background: #0e6ba8ff !important;
+      background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
+    line-height: 2; 
+    }
+  
+  .leter {
+      background: #0e6ba8ff !important; 
+      background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent!important; 
+    }
+  
+  .pacif {
+    font-family: 'Pacifico', cursive;
+    background-color: #00072dff;
+    color: #f5f5f5 !important;
+  }
+  
+  .pac {
+    color:#0e6ba8ff !important;
+  }
+  
+  
+  /* +++++++++++++++++++++++++++++++++++++++++ Slogan animation ++++++++++++++++++++++++++++++++++++++++++++++++++ */
+  
+  .pc {
+      animation-duration: 10s;
+      animation-name: slidein;
+      animation-iteration-count: infinite;
+    }
+  
+    @keyframes slidein {
+      from {
+        margin-right: 50%;
+        width: 300%;
+      }
+    
+      to {
+        margin-left: 50%;
+        width: 100%;
+      }
+  }
+  
+  /* ++++++++++++++++++++++++++++++++++++++++++++++++ Fin Slogan +++++++++++++++++++++++++++++++++++++++++++++++++ */
+  
+  
+  
+  /*  ANIMATION CARDS =================================*/
+  
+  .colo {
+    -webkit-animation:color-change-2x 2s linear infinite alternate both;
+    animation:color-change-2x 2s linear infinite alternate both
+  }
+  
+  
+   @-webkit-keyframes color-change-2x{
+     0%{background:#a6e1faff
+    }
+     100%{background:#001c55ff
+    }
+    }
+     
+    @keyframes color-change-2x{
+      0%{background:#a6e1faff
+      }
+    100%{background:#001c55ff
+    }
+  }
+  
+  .kenburns {
+      -webkit-animation: kenburns-top 10s ease-out both;
+              animation: kenburns-top 10s ease-out both;
+  }
+  
+  
+  @-webkit-keyframes kenburns-top {
+    0% {
+      -webkit-transform: scale(1) translateY(0);
+              transform: scale(1) translateY(0);
+      -webkit-transform-origin: 50% 16%;
+              transform-origin: 50% 16%;
+    }
+    100% {
+      -webkit-transform: scale(1.25) translateY(-15px);
+              transform: scale(1.25) translateY(-15px);
+      -webkit-transform-origin: top;
+              transform-origin: bottom;
+    }
+  }
+  @keyframes kenburns-top {
+    0% {
+      -webkit-transform: scale(1) translateY(0);
+              transform: scale(1) translateY(0);
+      -webkit-transform-origin: 50% 16%;
+              transform-origin: 50% 16%;
+    }
+    100% {
+      -webkit-transform: scale(1.25) translateY(-15px);
+              transform: scale(1.25) translateY(-15px);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+    }
+  }
+  
+  
+  /* Fin ANIMATION =============== */
+  
+  .text-justify  { text-align: justify !important; }
+  
+  .img-ht {
+    height: 400px;
+  }
+  
+  .ima {
+  width :190 px;
+  }
+  
+  .img-film {
+    width: 18rem;
+  }
+  
+  .hgt-img {
+    height: 250px;
+  }
+  
+  hr:not([size]) {
+    color:#0a2472ff;
+    height: 3px;
+  }
+  
+  .slick-arrow::before{
+    color: #360915;
+  }
+  
+  .tex_color {
+  color: rgb(212, 209, 212);
+  }
+  
+  
+  /* INPUT ::*/
+  
+  .form-control:focus {
+    border-color: #a6e1faff !important;
+    box-shadow: 0 0 5px #00072dff !important;
+  }
+  
+  
+  /* Image */
+  
+  .tail-img {
+    height: 286px;
+  }
+  
+  .tlogo {
+    width: 85px !important;
+  }
+  
+  /* Liens */
+  
+  a {
+    color: whitesmoke !important;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  
+  /* TAILLE DIV
+    .hgt {
+    height: 50px !important;
+  } */
+  
+  
+  /* Images */
+  
+  .gigi {
+  height: 100px !important;
+  width: 100px !important;
+  }
+  
+  /*================================================ BODY ====================================================== */
+  
+  body {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 5em;
+    color: #00072dff; 
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  .carousel-inner{
+    width:50%;
+    max-height: 600px !important;
+  
+  }
+  
+  /* ============================================= FIN DU BODY ================================================ */
+  
+  /* ============================================= FOOTER ===================================================== */
+  
+  footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-top: 2em;
+    margin-bottom: 0px;
+  }
+  
+  /* =========================================== FIN DU FOOTER ================================================ */
+  
+  

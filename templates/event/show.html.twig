@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Evénements</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ event.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ event.titre }}</td>
+            </tr>
+            <tr>
+                <th>Date_debut</th>
+                <td>{{ event.dateDebut ? event.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date_fin</th>
+                <td>{{ event.dateFin ? event.dateFin|date('Y-m-d H:i:s') : ''}}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ event.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ event.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ event.prix }}</td>
+            </tr>
+            <tr>
+                <th>Place</th>
+                <td>{{ event.place }}</td>
+            </tr>
+            {# <tr>
+            <img src=" {{ asset('image/' ~ event.image) }}" class="img-fluid w-50 bordi" alt="">
+            </tr> #}
+        </tbody>
+    </table>
+
+
+
+<button type="button" class="btn btn-outline-royale rounded-pill">
+ <a href="{{ path('event_index') }}" class="pac">Retour liste</a>
+</button>
+   
+<button type="button" class="btn btn-outline-royale rounded-pill">
+    <a href="{{ path('event_edit', {'id': event.id}) }}" class="pac">Nouvel événement</a>
+    </button>
+</div>
+
+    {{ include('event/_delete_form.html.twig') }}
+
+    
+{% endblock %}

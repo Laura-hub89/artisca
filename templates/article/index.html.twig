@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-5 mb-5 ">Projets</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Deroulement</th>
+                <th>Photo</th>
+                <th>Video</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ article.deroulement }}</td>
+                <td>{{ article.photo }}</td>
+                <td>{{ article.video }}</td>
+                <td>
+                    <a href="{{ path('article_show', {'id': article.id}) }}" class="pac">show</a>
+                    <a href="{{ path('article_edit', {'id': article.id}) }}" class="pac">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('article_new') }}" class="pac">Nouvel article</a>
+    </div>
+{% endblock %}

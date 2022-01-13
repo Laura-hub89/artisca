@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Artisca
+	{{ atelier.titre }}
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="text-center">
+			<h1>{{atelier.titre}}</h1>
+		</div>
+		<h2 class="text-center">{{atelier.soustitre}}</h2>
+		<h4 class="mt-5">Le {{ atelier.dateDebut|date("d/m/Y H:i") }}</h4>
+		<h5>{{atelier.lieu}}</h5>
+		<div class="intro fst-italic text-center d-flex justify-content-center mt-3">
+			<p>{{atelier.description}}</p>
+		</div>
+		<div class="text-center mt-3">
+			<img src="{{'/image/' ~ atelier.image}}" class="w-50 rounded img-fluid text-center" alt="{{atelier.titre}}">
+		</div>
+		<div class="mt-2">
+			<div>
+				<h3 class="text-center">Objectifs</h3>
+				<p>{{atelier.objectifs}}</p>
+			</div>
+			<div>
+				<h3 class="text-center">
+					<span>
+						Actions
+					</span>
+				</h3>
+				<p>{{atelier.actions}}</p>
+			</div>
+		</div>
+		<div class="text-center mt-3 mb-2">
+			{% if app.user %}
+				<a href="{{ path('reservation_sub', {id: atelier.id}) }}" class="btn btn-royal rounded">Réserver</a>
+			{% else %}
+				<a href="{{ path('app_login') }}" class="btn btn-royal rounded ">Réserver</a>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

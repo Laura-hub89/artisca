@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'article{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="text-center mb-5 mt-5">Créer un article</h1>
+
+    {{ include('article/_form.html.twig') }}
+
+    <a href="{{ path('article_index') }}">Retour liste</a>
+    </div>
+{% endblock %}

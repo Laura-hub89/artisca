@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Artisca : Ateliers
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="text-center">
+			<h1 class="text-center">Nos Ateliers</h1>
+			<div class="d-flex justify-content-center">
+				<hr class="w-75">
+			</div>
+		</div>
+
+		<h2 class="text-center">Artisca, un "mood" urbain !
+		</h2>
+
+
+		<p class="fst-italic text-center mt-4">
+			Tout au long de l’année, la ville vous donne 
+								rendez-vous pour vivre de grands moments.
+								Artisca vous donne l'opportunité de découvrir :
+		</p>
+
+
+		<div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
+			{% for event in ateliers %}
+				<div class="col">
+					<div class="card h-100" data-aos="flip-left" data-aos-duration="900">
+						<img src="{{'image/' ~ event.image}}" class="card-img-top img-fluid h-50" alt="...">
+						<div class="card-body text-center">
+							<h4 class="card-title pac text-center">{{event.titre}}</h4>
+							<p class="card-text">{{event.lieu}}</p>
+							<a href="{{path('atelier_detail', {id:event.id})}}" class="btn btn-royale rounded mt-3">Savoir +</a>
+						</div>
+					</div>
+				</div>
+
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeEvent{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">TypeEvent</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ type_event.id }}</td>
+            </tr>
+            <tr>
+                <th>Evenement</th>
+                <td>{{ type_event.evenement }}</td>
+            </tr>
+            <tr>
+                <th>Atelier</th>
+                <td>{{ type_event.atelier }}</td>
+            </tr>
+            <tr>
+                <th>Sortie</th>
+                <td>{{ type_event.sortie }}</td>
+            </tr>
+            <tr>
+                <th>Sejour</th>
+                <td>{{ type_event.sejour }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_event_index') }}">Retour liste</a>
+
+    <a href="{{ path('type_event_edit', {'id': type_event.id}) }}">Modifier</a>
+
+    {{ include('type_event/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'user.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">User index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Action</th>
+                <th>Email</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Age</th>
+                <th>Téléphone</th>
+                <th>Poste Rôle</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+<td> {{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.telephone }}</td>
+                <td>{{ user.posteRole }}</td>
+                <td>{{ user.genre }}</td>
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">Voir</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_new') }}">Nouvel utilisateur</a>
+    </div>
+{% endblock %}

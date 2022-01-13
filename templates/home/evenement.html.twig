@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Artisca : Evénements
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="text-center">
+			<h1 class="text-center">Nos Événements à venir</h1>
+			<div class="d-flex justify-content-center reed">
+				<hr class="w-75">
+			</div>
+		</div>
+
+		<h2 class="text-center mt-3">Tout au long de l’année, la ville vous donne rendez-vous pour vivre de grands moments.</h2>
+
+		<div class="text-center mt-5">
+			<p>
+				Une année riche vous attend !
+															Expositions phares, événements sportifs majeurs, festivals
+															incontournables, grands rendez-vous gastronomiques, 
+															animations inédites pour les familles… les temps forts 
+															s’enchainent à Athis-Mons en 2021 A chaque saison, la ville vous 
+															fait vibrer : tentez l’expérience !
+			</p>
+		</div>
+		<div class="d-flex justify-content-around mt-5">
+			{% for event in events %}
+
+				<div class="card" style="width: 18rem;">
+					<img src="{{'image/'~ event.image}}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h4 class="card-title pac text-center">{{event.titre}}</h4>
+						<p class="card-text">{{event.description}}</p>
+					</div>
+				</div>
+
+
+			{% endfor %}
+		</div>
+
+	</div>
+
+{% endblock %}

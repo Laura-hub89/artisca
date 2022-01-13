@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Event
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="text-center mt-5 mb-5">Créer un événement</h1>
+
+		<div class="container">
+			{{ form_start(form) }}
+			<div class="row">
+				{{ form_row(form.titre) }}
+				{{ form_row(form.description) }}
+
+				<div class="col-6">
+					{{ form_row(form.date_debut) }}
+				</div>
+				<div class="col-6">
+					{{ form_row(form.date_fin) }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					{{ form_row(form.lieu) }}
+				</div>
+				<div class="col-6">
+					{{ form_row(form.prix) }}
+				</div>
+
+			</div>
+
+			{{ form_row(form.place) }}
+			{{ form_row(form.type_event) }}
+		</div>
+		<button class="btn btn-outline-royale rounded-pill mt-2 w-25">{{ button_label|default('Enregistrer') }}</button>
+
+		{{ form_end(form) }}
+	</div>
+
+	<a href="{{ path('event_index') }}">Retour liste</a>
+</div>{% endblock %}

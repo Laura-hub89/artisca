@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TypeEvent{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Créer un TypeEvent</h1>
+
+    {{ include('type_event/_form.html.twig') }}
+
+    <a href="{{ path('type_event_index') }}">Retour liste</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,74 @@
+<header class="pacif">
+
+	<div class=" d-flex justify-content-between">
+
+		<div class="mt-2">
+			<a class="navbar-brand" href="{{ path('home')}}">
+			<img src="{{ asset('image/logo.PNG') }}" class="tlogo" >
+			</a>
+		</div>
+
+
+		<nav class="navbar navbar-expand-lg navbar-dark color5 me-3">
+			<div class="container">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Admin
+							</a>
+							<ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+							<li>
+							<a href="{{path('type_event_index')}}"></a>
+							</li>
+								<li>
+									<a class="dropdown-item" href="{{ path('event_index')}}">Evénements</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="{{ path('user_index')}}">User</a>
+								</li>
+							</ul>
+							<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Actions
+							</a>
+							<ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+								<li>
+									<a class="dropdown-item" href="{{ path('atelier')}}">Ateliers</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="{{ path('evenement')}}">Evénements</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href=" {{ path('nous')}} ">A propos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('contact')}}">Contact</a>
+						</li>
+					</ul>
+					<ul class="nav navbar">
+						{% if app.user  %}
+							<li class="nav-item">
+								<a class="nav-link sml" aria-current="page" href="{{path('app_logout')}}">Se déconnecter</a>
+							</li>
+
+						{% else %}
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="{{path('app_login')}}"><i class="fas fa-user"></i></a>
+							</li>
+						{% endif %}
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+</header>

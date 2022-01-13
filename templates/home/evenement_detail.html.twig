@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Arstica :
+	{{ event.titre }}
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="text-center">
+			<h1>{{event.titre}}</h1>
+		</div>
+		<h4 class="mt-5">Le	{{ event.dateDebut ? event.dateDebut|date('Y-m-d H:i:s') : '' }} </h4>
+		<h5>{{event.lieu}}</h5>
+		<div class="intro fst-italic text-center mt-3 mb-5">
+			<p>{{event.description}}</p>
+		</div>
+		<img src="{{'/image/' ~ event.image}}" alt="" class="w-100 h-50 img-fluid rounded">
+		<div class="mt-5 ">
+			<div>
+				<h3 class="text-center">
+					<span>Objectifs</span>
+				</h3>
+				<p>{{event.objectifs}}</p>
+			</div>
+			<div>
+				<h3 class="text-center">
+					<span>Actions</span>
+				</h3>
+				<p>{{event.actions}}</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

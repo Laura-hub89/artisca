@@ -1,0 +1,159 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Accueil Artisca
+{% endblock %}
+
+
+{% block body %}
+
+		<div class="container mt-5">
+		    <div class="mt-3 pt-2">
+		        <h2 class="d-flex justify-content-center kenburns">Vivier de créativité urbaine !</h2>
+	        </div>
+			<div class="mt-5">
+				<h2>L’association favorise l’exploration culturelle et la restitution des recherches engagées, en organisant des ateliers de cultures urbaines.</h2>
+			</div>
+
+			<div class="row my-5">
+				<p>
+					<strong>L’association propose deux actions :</strong>
+				</p>
+				<div class="col-6">
+					<p>Accompagnement à la scolarité : les séances du soir sont centrées sur les apports méthodologiques grâce à la pédagogie du détour et l’ouverture culturelle (avec une initiation à l’informatique, des jeux et des exercices ludiques favorisant les apprentissages, des temps de contes et de débats…)</p>
+				</div>
+				<div class="col-6">
+					<p>Culture & Découverte : l’association propose des ateliers pédagogiques et culturels qui permettent à un large public (enfants, jeunes, parents, habitants) de découvrir de nouveaux centres d’intérêt, de développer leur curiosité et d’élargir ou de réinvestir leurs connaissances, de participer à des temps d’échanges et de partages…</p>
+				</div>
+			</div>
+		</div>
+
+			<div class="container mt-5" data-aos="fade-up">
+				<div class="row mt-5">
+					{#  N'afficher que les événement à venir ! #}
+						<h3 class="my-5 d-flex justify-content-center">Evénements à venir</h3>						
+						<p class="fst-italic d-flex justify-content-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+				</div>
+				<div class="row mt-1 g-4 g-lg-5">
+                    {% for evenement in evenements %}
+                        <div class="col-6 col-md-6 col-lg-6">
+						    <div class="card" style="width: 18rem;">
+					            <img src="{{'image/'~ evenement.image}}" class="card-img-top" alt="...">
+					            <div class="card-body">
+						            <h4 class="card-title pac text-center">{{evenement.titre}}</h4>
+						            <p class="card-text">{{evenement.description}}</p>
+									<p class="card-text">{{evenement.lieu}}</p>
+					            </div>
+				            </div>
+						</div>
+                    {% endfor %}
+                </div>
+				<div class="row mt-5">
+					<div class="col-10">
+						<hr>
+					</div>
+					<div class="col-2">
+						<a href="{{path('evenement') }}">
+							<button class="btn btn-outline-royale rounded-pill">En savoir +</button>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="container mt-5" data-aos="fade-up">
+				<div class="row mt-5">
+				    <h3 class="my-5 d-flex justify-content-center">Nos Ateliers</h3>
+					<p class="fst-italic d-flex justify-content-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="row mt-1 g-4 g-lg-5">
+                    {% for atelier in ateliers %}
+                        <div class="col-6 col-md-4 col-lg-4">
+						    <div class="card" style="width: 18rem;">
+					            <img src="{{'image/'~ atelier.image}}" class="card-img-top" alt="...">
+					            <div class="card-body">
+						            <h4 class="card-title pac text-center">{{atelier.titre}}</h4>
+						            <p class="card-text">{{atelier.description}}</p>
+									<p class="card-text">{{atelier.lieu}}</p>
+					            </div>
+				            </div>
+						</div>
+                    {% endfor %}
+                </div>
+				<div class="row mt-5">
+				    <div class="col-10">
+						<hr>
+					</div>
+					<div class="col-2">
+						<a href="{{path('atelier')}}">
+							<button class="btn btn-outline-royale rounded-pill">En savoir +</button>
+						</a>
+					</div>
+				</div>
+			</div>
+
+		{# <div class="mt-5">
+			<div class="newsletter">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<h4>Rejoignez Notre Newsletter !</h4>
+							<p>Pour être toujours informer à temps pour tous nos événements, nos ateliers...
+							</p>
+							<h5>Abonnez-vous !</h5>
+							<form action="" method="post">
+								<input type="email" name="email" class="form-control rounded-pill">
+								<button class="btn btn-outline-royale rounded-pill mt-2" type="submit">S'abonner</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div> #}
+
+			<div class="footer-top mt-5">
+				<div class="container">
+					<div class="row d-flex justify-content-around">
+
+						<div class="col-lg-3 col-md-6 footer-contact">
+							<h5>La Toile</h5>
+							<p>
+								29 Avenue Léon Blum<br>
+								91100 Corbeil-Essonnes<br>
+								France
+								<br>
+								<span>
+									<a href="tel:+330985009120" class="pac">Tel</a>
+								</span>
+								09 85 00 91 20
+								<br>
+								<span class="line">
+									<a href="mailto:popotte-joyeux.laura@outlook.fr" class="pac">Mail</a>
+								</span>
+								latoile91110@gmail.com<br>
+							</p>
+						</div>
+
+
+						{# <div class="col-lg-3 col-md-6 footer-links">
+							<h5>Nos réseaux sociaux</h5>
+							<div class="row">
+								<div class="col-1">
+									<i class="fab fa-instagram"></i>
+								</div>
+								<div class="col-1">
+									<i class="fab fa-facebook-f"></i>
+								</div>
+								<div class="col-1">
+									<i class="fab fa-twitter"></i>
+								</div>
+								<div class="col-1">
+									<i class="fab fa-snapchat-ghost"></i>
+								</div>
+							</div>
+						</div> #}
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+{% endblock %}
